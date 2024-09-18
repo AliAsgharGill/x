@@ -6,7 +6,7 @@
 {% block content %}
 <h1  class="mt-4 p-4 text-white">List of Tweets</h1>
 
-<a href="{% url "tweet_create" %}}" class="btn btn-primary">Create Tweet</a>
+<a href="{% url "tweet_create"%}" class="btn btn-primary">Create Tweet</a>
 
 <div class="container row gap-3">
     {% for tweet in tweets  %}
