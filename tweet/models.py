@@ -5,8 +5,8 @@ from django.contrib.auth.models import User
 
 class Tweet(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    text = models.TextField(max_length=255)
-    photo = models.ImageField(upload_to="photos/", null=True, blank=True)
+    text = models.CharField(max_length=255)
+    photo = models.ImageField(upload_to='photos/')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     

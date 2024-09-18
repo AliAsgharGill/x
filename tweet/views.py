@@ -7,7 +7,7 @@ def index(request):
     return render(request, 'index.html')
 
 def tweet_list(request):
-    tweets = Tweet.objects.all().order_by("-created_at")
+    tweets = Tweet.objects.all().order_by("-created_at")  # pylint: disable=no-member
     return render(request, 'tweet_list.html', {'tweets': tweets})
 
 def tweet_create(request):
@@ -20,7 +20,7 @@ def tweet_create(request):
             return redirect('tweet_list')
     else:
         form = TweetForm()
-    return render(request, 'tweet_create.html', {'form': form})
+    return render(request, 'tweet_form.html', {'form': form})
 
 def tweet_edit(request, tweet_id):
     tweet = get_object_or_404(Tweet, pk=tweet_id, user = request.user)
